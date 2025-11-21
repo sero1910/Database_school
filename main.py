@@ -1,2 +1,4 @@
-liczby = [1,2,3,4]
-kwadraty = [i * i for i in liczby]
+from models import Student
+
+student1 = Student("Wojciech","Serodzinski","Niepodległości 7d", "48799","9128123","Mężczyzna")
+print(student1)
