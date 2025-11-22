@@ -20,15 +20,24 @@ def pobierz_dane_studenta():
 
      return Student(imie, nazwisko, adres, nr_indeksu, pesel, plec)
 
-
+def to_dict(self):
+     return{
+            "imie": self.imie,
+            "nazwisko": self.nazwisko,
+            "adres": self.adres,
+            "nr_indeksu": self.nr_indeksu,
+            "pesel": self.pesel,
+            "plec": self.plec
+     }
 
 
 
 def main():
+     
+     
     
-
-    
-        wyswietl_menu()
+       
+  
 
 
 if __name__ == "__main__":
