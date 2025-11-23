@@ -21,7 +21,12 @@ def pobierz_dane_studenta():
     adres = input("Podaj adres: ")
     nr_indeksu = input("Podaj numer indeksu: ")
     
-    # Pętla, która wymusza podanie poprawnego PESELu
+    while True:
+        plec = input("Podaj płeć (K/M: ").upper()
+        if plec in ["K", "M"]:
+            break
+        print("Błędna płeć. Wybierz K lub M")
+    
     while True:
         pesel = input("Podaj PESEL: ")
         czy_ok, komunikat = validators.sprawdz_pesel(pesel)
@@ -29,7 +34,7 @@ def pobierz_dane_studenta():
             break
         print(f"Błąd: {komunikat}")
 
-    plec = input("Podaj płeć (K/M): ").upper()
+    
     
     return Student(imie, nazwisko, adres, nr_indeksu, pesel, plec)
 
