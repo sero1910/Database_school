@@ -51,9 +51,20 @@ def main():
             print(f"\n>> {wiadomosc}")
         
         elif wybor == "2":
-            print("\n[INFO] Funkcja wyświetlania w budowie...")
-            # Tu wywołamy db.pobierz_wszystkich()
+            print("\n--- Lista studentów ---")
+            lista = db.pobierz_wszystkich()
             
+            if not lista:
+                print("Baza jest pusta. Dodaj kogoś!")
+            else:
+                # Nagłówek tabeli (formatowanie f-stringiem dla równych odstępów)
+                print(f"{'Indeks':<10} | {'Imię i Nazwisko':<25} | {'PESEL':<12} | {'Płeć'}")
+                print("-" * 60)
+                
+                for s in lista:
+                    print(f"{s.nr_indeksu:<10} | {s.imie + ' ' + s.nazwisko:<25} | {s.pesel:<12} | {s.plec}")
+            
+            input("\nNaciśnij ENTER, aby wrócić do menu...")
         elif wybor == "3":
             print("\n[INFO] Wyszukiwanie w budowie...")
             
