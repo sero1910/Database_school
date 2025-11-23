@@ -9,3 +9,13 @@ class Student:
 
     def __str__(self):
         return f"Student {self.imie} {self.nazwisko} mieszka na ulicy {self.adres}. Jego numer indekstu to {self.nr_indeksu}. Pesel: {self.pesel}. Płeć: {self.plec}"
+    
+    def to_dict(self):
+     return{
+            "imie": self.imie,
+            "nazwisko": self.nazwisko,
+            "adres": self.adres,
+            "nr_indeksu": self.nr_indeksu,
+            "pesel": self.pesel,
+            "plec": self.plec
+     }
